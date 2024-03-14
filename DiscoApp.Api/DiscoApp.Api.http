@@ -1,0 +1,22 @@
+@DiscoApp.Api_HostAddress = http://localhost:5265
+
+GET {{DiscoApp.Api_HostAddress}}/albums
+Accept: application/json
+
+###
+
+GET {{DiscoApp.Api_HostAddress}}/albums/3
+Accept: application/json
+
+###
+
+POST {{DiscoApp.Api_HostAddress}}/albums
+Content-Type: application/json
+
+{
+  "nom": "RDDR",
+  "nombreDeTitre": 9,
+  "artist": "Nit doff",
+  "genreMusical": "Rap",
+  "dateSortie": "2010-08-02"
+}
