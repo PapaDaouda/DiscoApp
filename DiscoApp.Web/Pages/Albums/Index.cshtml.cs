@@ -1,4 +1,5 @@
 using DiscoApp.Web.Services;
+using DiscoApp.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -12,7 +13,10 @@ public class IndexModel : PageModel
     {
         _albumsService = albumsService;
     }
-    public void OnGet()
+
+    public IList<AlbumViewModel> Albums { get;set; } = default!;
+    public async Task OnGetAsync()
     {
+        Albums = await _albumsService.GetAlbumsAsync();
     }
 }
